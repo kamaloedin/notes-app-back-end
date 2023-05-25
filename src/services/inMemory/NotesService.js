@@ -63,12 +63,13 @@ class NotesService {
 
   deleteNoteById(id) {
     const index = this._notes.findIndex((note) => note.id === id);
-
-    if (index === 1) {
+    if (index === -1) {
       throw new Error('Catatan gagal dihapus, ID tidak ditemukan');
     }
 
     this._notes.splice(index, 1);
+
+    console.log(this._notes.findIndex((note) => note.id === id));
   }
 }
 
