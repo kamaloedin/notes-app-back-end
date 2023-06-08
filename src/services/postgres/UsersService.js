@@ -36,7 +36,7 @@ class UsersService {
 
     const result = await this._pool.query(query);
     if (result.rows.length > 0) {
-      throw new InvariantError('Gagal menambah user. Username sudah digunakan.');
+      throw new InvariantError('Gagal menambahkan user. Username sudah digunakan.');
     }
   }
 
@@ -47,7 +47,6 @@ class UsersService {
     };
 
     const result = await this._pool.query(query);
-    console.log(result);
 
     if (!result.rows.length) {
       throw new NotFoundError('User tidak ditemukan');
