@@ -11,6 +11,14 @@
   },
   "rules": {
     "no-console": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectPattern": { "multiline": true },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+      }
+    ]
   }
 }
